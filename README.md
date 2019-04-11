@@ -16,3 +16,7 @@ disk utility GUI you can dismount the USB drive (both partitions) then right cli
 disk utility and create a DMG file (will create both partitions inside the file). Email me if needed. 
 You could in theory use this for any multi-partition duplication from DMG to USB flash drives, edit for your own purposes. 
 Danger, /dev locations must be modified for your Mac/setup, if not you could destroy a partition!!! You have been warned!
+
+To run from macOS terminal:
+
+sudo sh DuplicateMacProvisionDiskImg.sh
