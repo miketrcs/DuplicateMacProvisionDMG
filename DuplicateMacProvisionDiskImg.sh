@@ -10,9 +10,14 @@
 # The Mac Provisioner creates a multi-partition drive that you can option boot a MacBook/iMac/other and automatically install
 # macOS. (Brief desc.) I did not right off find an easy way to seamlessly duplicate the multi-partition drive. Single partition
 # can be easily duplicated with Disk Utility/other GUI utilities but from what I found not multi-partition (at the time of this
-# writing)
-#
+# writing). This script is looped, unmounts and asks you if you want to do another after duplication is finished. 
+# Instructions:
 # Make sure your partitions are correct by using "diskutil list" with your disk media below mounted and USB flash drive.
+# Make sure you change the MacProvImageLoc to the dmg name you create. Mac Provisioner can create erase installs and upgrade installs
+# so I name the dmg appropriately. You create the DMG file AFTER you create a USB flash drive with Mac to your liking. In
+# disk utility GUI you can dismount the USB drive (both partitions) then right click on the dismounted flash drive inside 
+# disk utility and create a DMG file (will create both partition inside the file. Email me if needed. 
+# You could in theory use this for any multiple purpose multi-partition duplication, edit for your own purposes. 
 
 # ************* Danger, /dev locations must be modified for your Mac/setup, if not you could destroy a partition!!! **************
 
@@ -26,9 +31,11 @@ clear
 diskutil list
 #Loop Menu Variables
 break='Continue Quit'
-PS3='Type 1 to Continue and 2 to Exit! *** Danger!! This script could wipe usable partitions if the disk locations are not changed in this script!!! ***'
+PS3='Type 1 then Enter to Continue and 2 then Enter to Exit! *** Danger!! This script could wipe usable partitions if the disk locations are not changed in this script!!! ***'
 
-#Can Leave. Change if needed to vary the size of the 1st partition
+#I recommend at least using a 32GB flash drive. Change the below variable needed to vary the size of the 1st partition
+#Recommended flash drive ($9.xx from Amazon) Samsung USB 3.1 32GB FIT drives. Great heavy duty drives for the price!
+
 DrivePartSize1='16g'
 
 : '
@@ -70,9 +77,9 @@ sudo asr restore --erase --noprompt -source $DiskImgPart1 --target $FlashPart1
 #Restore partition #2
 sudo asr restore --erase --noprompt -source $DiskImgPart2  --target $FlashPart2
 
-#Finished, unmount flash drive
+#Finished, give time to let asr finish up, unmount flash drive
 
-sleep 5
+sleep 15
 
 diskutil unmountDisk /dev/disk3
 
