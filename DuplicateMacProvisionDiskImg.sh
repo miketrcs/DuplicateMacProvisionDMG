@@ -31,7 +31,7 @@ clear
 diskutil list
 #Loop Menu Variables
 break='Continue Quit'
-PS3='Type 1 then Enter to Continue and 2 then Enter to Exit! *** Danger!! This script could wipe usable partitions if the disk locations are not changed in this script!!! ***'
+PS3='Type 1 then press Enter to Continue or 2 then Enter to Exit! *** Danger!! This script could wipe usable partitions if the disk locations are not changed in this script!!! ***'
 
 #I recommend at least using a 32GB flash drive. Change the below variable needed to vary the size of the 1st partition
 #Recommended flash drive ($9.xx from Amazon) Samsung USB 3.1 32GB FIT drives. Great heavy duty drives for the price!
