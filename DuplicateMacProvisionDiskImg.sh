@@ -1,7 +1,7 @@
 #!/bin/sh
 # DuplicateMacProvisionDiskImg.sh
 # Use sudo sh ./DuplicateMacProvisionDiskImg.sh to run
-# Read info below before using!!!
+# *** Read info below before using!!! ***
 # Mike Thompson, JMT, 4/2019, Rutherford County Schools
 
 # This is a niche quick and dirty script for those wanting to speed up the process of duplicating Mac Provisioning USB Flash drives
