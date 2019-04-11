@@ -2,11 +2,17 @@
 #DuplicateMacProvisionDiskImg.sh
 #Use sudo sh ./DuplicateMacProvisionDiskImg.sh to run
 #Partition flash drive
-#Mike Thompson, JMT, 2019
+#Mike Thompson, JMT, 2019, Rutherford County Schools
+
+# This is a niche quick and dirty script for those wanting to speed up the process of duplicating Mac Provisioning USB Flash drives
+# for Reimaging Apple/Mac computers. If you do not know what Mac Provisioner is (tool provided by Apple) you do not need this.
+# Why did I do this? Needed a quicker way to mass duplicate Mac Provisioner USB drives for technicians in RCS. Since it is a multi-
+# partition usb flash drive after creation there was not a streamlined way I could find to duplicate "quickly" without creating something 
+# on my own. 
+#
+# Make sure your partitions are correct by using "diskutil list" with your disk media below mounted and USB flash drive.
 
 # ************* Danger, /dev locations must be modified for your Mac/setup, if not you could destroy a partition!!! **************
-
-# Make sure your partitions are correct by using "diskutil list" with your disk media below mounted and USB flash drive.
 
 
 #Create looped menu for making multiple duplications. 
