@@ -1,4 +1,4 @@
-*** Danger, this can be a destructive script, read fully below! ***
+*** Danger, this can be a destructive script, read below fully!!! ***
 
 This is a niche quick and dirty script for those wanting to speed up the process of duplicating Mac Provisioning USB Flash drives
 for Reimaging Apple/Mac computers. If you do not know what Mac Provisioner is (tool provided by Apple) you do not need this.
