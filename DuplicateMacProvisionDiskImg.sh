@@ -81,7 +81,7 @@ sudo asr restore --erase --noprompt -source $DiskImgPart2  --target $FlashPart2
 
 sleep 15
 
-diskutil unmountDisk /dev/disk3
+diskutil unmountDisk $FlashDriveLoc
 
 done
 
