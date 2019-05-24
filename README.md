@@ -10,6 +10,9 @@ macOS. (Brief desc.) I did not right off find an easy way to seamlessly duplicat
 can be easily duplicated with Disk Utility/other GUI utilities but from what I found not multi-partition (at the time of this
 writing). This script is looped, unmounts and asks you if you want to do another after duplication is finished. 
 
+# ************* Danger if you use Apple Time Capsule!!! If it automounts before you run this it could utilize a /dev/disk that 
+# was once allocated by a flash drive. Double check diskutil list! (Don't ask me how I know this...)
+
 Instructions:
 Make sure your partitions are correct by using "diskutil list" with your disk media below mounted and USB flash drive.
 Make sure you change the MacProvImageLoc to the dmg name you create. Mac Provisioner can create erase installs and upgrade installs
@@ -21,4 +24,5 @@ Danger, /dev locations must be modified for your Mac/setup, if not you could des
 
 To run from macOS terminal:
 
-sudo sh DuplicateMacProvisionDiskImg.sh
+sudo su
+sh DuplicateMacProvisionDiskImg.sh
