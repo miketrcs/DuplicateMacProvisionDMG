@@ -1,8 +1,7 @@
 #!/bin/sh
 # DuplicateMacProvisionDiskImg.sh
 # Use sudo sh ./DuplicateMacProvisionDiskImg.sh to run
-# *** Read info below before using!!! ***
-# Mike Thompson, JMT, 4/2019, Rutherford County Schools
+# Mike Thompson, JMT, 5/2019, Rutherford County Schools
 
 # This is a niche quick and dirty script for those wanting to speed up the process of duplicating Mac Provisioning USB Flash drives
 # for Reimaging Apple/Mac computers. If you do not know what Mac Provisioner is (tool provided by Apple) you do not need this.
@@ -14,13 +13,17 @@
 # Instructions:
 # Make sure your partitions are correct by using "diskutil list" with your disk media below mounted and USB flash drive.
 # Make sure you change the MacProvImageLoc to the dmg name you create. Mac Provisioner can create erase installs and upgrade installs
-# so I name the dmg appropriately. You create the DMG file AFTER you create a USB flash drive with Mac to your liking. In
+# so I name the dmg appropriately. You create the DMG file AFTER you create a USB flash drive with Mac Provisioner to your liking. In
 # disk utility GUI you can dismount the USB drive (both partitions) then right click on the dismounted flash drive inside 
 # disk utility and create a DMG file (will create both partition inside the file. Email me if needed. 
 # You could in theory use this for any multiple purpose multi-partition duplication, edit for your own purposes. 
 
 # ************* Danger, /dev locations must be modified for your Mac/setup, if not you could destroy a partition!!! **************
+# ************* Danger if you use Apple Time Capsule!!! If it automounts before you run this it could utilize a /dev/disk that 
+# was once allocated by a flash drive. Double check diskutil list! (Don't ask me how I know this...)
 
+# I recommend at least using a 32GB flash drive. Change the below variable needed to vary the size of the 1st partition
+# Recommended flash drive ($9.xx from Amazon) Samsung USB 3.1 32GB FIT drives. Fast and reliable drives for the price!
 
 #Create looped menu for making multiple duplications. 
 
@@ -31,7 +34,7 @@ clear
 diskutil list
 #Loop Menu Variables
 break='Continue Quit'
-PS3='Type 1 then press Enter to Continue or 2 then Enter to Exit! *** Danger!! This script could wipe usable partitions if the disk locations are not changed in this script!!! ***'
+PS3='*** Danger!! This script could wipe usable partitions if the disk locations are not changed in this script. Beware if you use a Time Capsule as it can automount to one of the dev locations you have configured!!! *** Type 1 then press Enter to Continue or 2 then Enter to Exit!'
 
 #I recommend at least using a 32GB flash drive. Change the below variable needed to vary the size of the 1st partition
 #Recommended flash drive ($9.xx from Amazon) Samsung USB 3.1 32GB FIT drives. Great heavy duty drives for the price!
