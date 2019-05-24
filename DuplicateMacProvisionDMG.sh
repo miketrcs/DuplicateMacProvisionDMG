@@ -47,12 +47,16 @@ Danger!!! You need to do a diskutil list at the CLI to make sure the below is co
  Make sure you rename the Provisioning Image with a shortfile name. (otherwise it will need to be escaped out)
 '
 
-FlashDriveLoc='/dev/disk3'
-MacProvImageLoc='/Users/thompsonmike/Desktop/MacProvisioning/MacProvErase.dmg'
-DiskImgPart1='/dev/disk4s2'
-DiskImgPart2='/dev/disk4s3'
-FlashPart1='/dev/disk3s2'
-FlashPart2='/dev/disk3s3'
+# **Modify the below 2 variable locations, minimum config**
+
+FlashDriveLoc='/dev/disk4'
+#./ = local bash working directory. Remove if you want to provide full path. 
+MacProvImageLoc='./MacProvErase.dmg'
+
+# **End Modify**
+
+FlashDriveLocPart1="$FlashDriveLoc"s2
+FlashDriveLocPart2="$FlashDriveLoc"s3
 
 
 select name in $break
@@ -71,19 +75,20 @@ echo
 diskutil partitionDisk $FlashDriveLoc GPT JHFS+ First $DrivePartSize1 JHFS+ Second 0b
 
 #Mount Disk Image previously made with Disk Utility from flash drive read only (Example location)
-
-hdiutil mount -readonly $MacProvImageLoc
+MacProvImageDev=$(hdiutil mount -readonly $MacProvImageLoc | awk '/dev.disk/{print$1}')
+MacProvImageMountLoc=$(echo $MacProvImageDev | awk '{ print $1 }')
 
 #Restore partition #1
-sudo asr restore --erase --noprompt -source $DiskImgPart1 --target $FlashPart1
+sudo asr restore --erase --noprompt -source "$MacProvImageMountLoc"s2 --target $FlashDriveLocPart1
 
 #Restore partition #2
-sudo asr restore --erase --noprompt -source $DiskImgPart2  --target $FlashPart2
+sudo asr restore --erase --noprompt -source "$MacProvImageMountLoc"s3 --target $FlashDriveLocPart2
 
 #Finished, give time to let asr finish up, unmount flash drive
 
 sleep 15
 
+diskutil unmountDisk $MacProvImageDev
 diskutil unmountDisk $FlashDriveLoc
 
 done
