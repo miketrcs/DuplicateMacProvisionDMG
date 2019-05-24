@@ -1,5 +1,7 @@
 <h2>Duplicate Mac Provisioning Flash Disk</h2>
 
+NOTE: Moving development to DuplicateMacProvisionDMGMulti. If there are any issues with this stable I will change otherwise no new features will be added.
+
 *** Danger, this can be a destructive script, read below fully, not responsible for data loss!!! Must edit script to change drive locations to match your setup ***
 
 This is a niche quick and dirty script for those wanting to speed up the process of duplicating Mac Provisioning USB Flash drives
