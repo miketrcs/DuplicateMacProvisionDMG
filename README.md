@@ -13,7 +13,7 @@ writing). This script is looped, unmounts and asks you if you want to do another
 Instructions:
 Make sure your partitions are correct by using "diskutil list" with your disk media below mounted and USB flash drive.
 Make sure you change the MacProvImageLoc to the dmg name you create. Mac Provisioner can create erase installs and upgrade installs
-so I name the dmg appropriately. You create the DMG file AFTER you create a USB flash drive with Mac to your liking. In
+so I name the dmg appropriately. You create the DMG file AFTER you create a USB flash drive with Mac Provisioner to your liking. In
 disk utility GUI you can dismount the USB drive (both partitions) then right click on the dismounted flash drive inside 
 disk utility and create a DMG file (will create both partitions inside the file). Email me if needed. 
 You could in theory use this for any multi-partition duplication from DMG to USB flash drives, edit for your own purposes. 
