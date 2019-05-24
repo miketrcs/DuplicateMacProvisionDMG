@@ -27,4 +27,5 @@ Danger, /dev locations must be modified for your Mac/setup, if not you could des
 To run from macOS terminal:
 
 sudo su
+
 sh DuplicateMacProvisionDiskImg.sh
