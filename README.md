@@ -1,6 +1,6 @@
 <h2>Duplicate Mac Provisioning Flash Disk</h2>
 
-NOTE: Moving development to DuplicateMacProvisionDMGMulti. If there are any issues with this stable I will change otherwise no new features will be added.
+NOTE: Moving development to DuplicateMacProvisionDMGMulti. If there are any issues with this stable I will change otherwise no new features will be added. https://github.com/miketrcs/DuplicateMacProvisionDMGMulti
 
 *** Danger, this can be a destructive script, read below fully, not responsible for data loss!!! Must edit script to change drive locations to match your setup ***
 
