@@ -10,8 +10,8 @@ macOS. (Brief desc.) I did not right off find an easy way to seamlessly duplicat
 can be easily duplicated with Disk Utility/other GUI utilities but from what I found not multi-partition (at the time of this
 writing). This script is looped, unmounts and asks you if you want to do another after duplication is finished. 
 
-# ************* Danger if you use Apple Time Capsule!!! If it automounts before you run this it could utilize a /dev/disk that 
-# was once allocated by a flash drive. Double check diskutil list! (Don't ask me how I know this...)
+************* Danger if you use Apple Time Capsule!!! If it automounts before you run this it could utilize a /dev/disk that 
+was once allocated by a flash drive. Double check diskutil list! (Don't ask me how I know this...)
 
 Instructions:
 Make sure your partitions are correct by using "diskutil list" with your disk media below mounted and USB flash drive.
