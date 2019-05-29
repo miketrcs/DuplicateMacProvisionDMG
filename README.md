@@ -2,7 +2,7 @@
 
 NOTE: Moving development to DuplicateMacProvisionDMGMulti. If there are any issues with this stable I will change otherwise no new features will be added. https://github.com/miketrcs/DuplicateMacProvisionDMGMulti This script may still be useful for those without USB Hubs for imaging multiple flash drives so letting it exist.
 
-*** Danger, this can be a destructive script, read below fully, not responsible for data loss!!! Must edit script to change drive locations to match your setup ***
+*** Danger, this can be a destructive script, read below fully, not responsible for data loss!!! Must edit script to change drive locations to match your setup. I HIGHLY recommend pausing Time Machine backup if used on the Mac running this script. It can mount into a dev location that you may have set as an USB flash drive while they are unplugged! ***
 
 This is a niche quick and dirty script for those wanting to speed up the process of duplicating Mac Provisioning USB Flash drives
 for Reimaging Apple/Mac computers. If you do not know what Mac Provisioner is (tool provided by Apple) you do not need this.
